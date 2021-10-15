@@ -13,6 +13,27 @@ Input: head = [1,2], n = 1
 Output: [1]
 
 var removeNthFromEnd = function(head, n) {
+//option pair programming in algo club w/ Becca, Hannah, Shelby, Tracey
+    //136 ms runtime
+    let left = head
+    let right = head 
+    let i = 0
+    if (!head.next) return null
+    while (i++ < n) {
+        right = right.next
+    } 
+    if (right === null) {
+        return head = head.next
+    }
 
-  
+    while(right && right.next) {
+          right = right.next
+          left = left.next
+          }
+
+    left.next = left.next.next
+
+    return head
+
+
 }
